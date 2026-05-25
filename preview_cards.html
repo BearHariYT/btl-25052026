@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Превью — локации и карточка PROMO | byteland</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+	<style>
+		body { padding-top: 40px; padding-bottom: 80px; }
+
+		/* ── Локации справа, SVG-флаги ── */
+		.loc-row {
+			display: flex;
+			justify-content: flex-end;
+			gap: 8px;
+			flex-wrap: wrap;
+			margin-bottom: 36px;
+		}
+		.loc-btn {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 8px 14px;
+			background-color: var(--light-dark);
+			border: 1px solid var(--light-dark);
+			border-radius: 10px;
+			cursor: pointer;
+			transition: background-color 0.2s, border-color 0.2s;
+			font-family: "Golos Text", sans-serif;
+		}
+		.loc-btn:hover { background-color: var(--dark); border-color: rgba(255,255,255,0.1); }
+		.loc-btn.active { background-color: var(--blue); border-color: var(--blue); }
+		.loc-flag-wrap {
+			width: 34px; height: 34px;
+			border-radius: 50%;
+			background-color: var(--dark);
+			display: flex; align-items: center; justify-content: center;
+			flex-shrink: 0; overflow: hidden;
+		}
+		.loc-flag-wrap img { width: 22px; height: 22px; object-fit: contain; }
+		.loc-btn.active .loc-flag-wrap { background-color: rgba(255,255,255,0.15); }
+		.loc-info { display: flex; flex-direction: column; }
+		.loc-name { font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.2; }
+		.loc-city { font-size: 11px; color: var(--gray); }
+		.loc-btn.active .loc-city { color: rgba(255,255,255,0.6); }
+		.loc-ping { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--green); margin-top: 2px; }
+		.loc-btn.active .loc-ping { color: rgba(255,255,255,0.8); }
+		.ping-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+		.loc-btn.active .ping-dot { background: rgba(255,255,255,0.8); }
+
+		/* ── Бейджи дополнительных фич внутри оригинальной карточки ── */
+		.plan-tags {
+			display: flex;
+			justify-content: center;
+			gap: 6px;
+			flex-wrap: wrap;
+			margin-bottom: 16px;
+		}
+		.plan-tag {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			padding: 4px 10px;
+			background-color: var(--background);
+			border: 1px solid rgba(255,255,255,0.08);
+			border-radius: 6px;
+			font-size: 12px;
+			color: var(--gray);
+			font-family: "Golos Text", sans-serif;
+		}
+		.plan-tag svg { flex-shrink: 0; }
+
+		/* для сравнения */
+		.compare-label {
+			font-size: 11px; font-weight: 600; text-transform: uppercase;
+			letter-spacing: 0.08em; color: var(--gray); margin-bottom: 14px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+
+	<!-- ЛОКАЦИИ СПРАВА -->
+	<div class="loc-row">
+		<button class="loc-btn active" onclick="switchLoc(this)">
+			<div class="loc-flag-wrap"><img src="assets/images/country/russia.svg" alt="RU"></div>
+			<div class="loc-info">
+				<span class="loc-name">Россия</span>
+				<span class="loc-city">Москва</span>
+				<span class="loc-ping"><span class="ping-dot"></span>~5 мс</span>
+			</div>
+		</button>
+		<button class="loc-btn" onclick="switchLoc(this)">
+			<div class="loc-flag-wrap"><img src="assets/images/country/germany.svg" alt="DE"></div>
+			<div class="loc-info">
+				<span class="loc-name">Германия</span>
+				<span class="loc-city">Франкфурт</span>
+				<span class="loc-ping"><span class="ping-dot"></span>~40 мс</span>
+			</div>
+		</button>
+		<button class="loc-btn" onclick="switchLoc(this)">
+			<div class="loc-flag-wrap"><img src="assets/images/country/poland.svg" alt="PL"></div>
+			<div class="loc-info">
+				<span class="loc-name">Польша</span>
+				<span class="loc-city">Варшава</span>
+				<span class="loc-ping"><span class="ping-dot"></span>~30 мс</span>
+			</div>
+		</button>
+	</div>
+
+	<hr style="border-color: rgba(255,255,255,0.07); margin-bottom: 40px;">
+
+	<!-- КАРТОЧКИ -->
+	<div class="row">
+
+		<!-- НОВАЯ: оригинальный дизайн + бейджи -->
+		<div class="col-md-4">
+			<div class="compare-label">✦ С добавлением баз и бэкапов</div>
+			<div class="card minecraft-popular mb-4 text-center">
+				<div class="ribbon minecraft-popular"><span>БЕСПЛАТНО</span></div>
+				<div class="card-body">
+					<div class="card-icon mb-4">
+						<svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg>
+					</div>
+					<h2 class="plan-title mb-1">Promo</h2>
+					<h4 class="plan-desc mb-4">Ryzen 9 9950x 5.7 ГГц</h4>
+					<ul class="list-unstyled mb-3">
+						<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> 2 vCore</li>
+						<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> 2.5 GB RAM</li>
+						<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> 10 GB NVMe SSD</li>
+					</ul>
+					<!-- Бейджи — лаконичная строка -->
+					<div class="plan-tags mb-3">
+						<span class="plan-tag">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+							20 БД
+						</span>
+						<span class="plan-tag">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+							5 бэкапов
+						</span>
+					</div>
+					<h2 class="price mb-4">0₽ <span>/ 48ч.</span></h2>
+					<a href="https://t.me/bytelandnews" class="btn btn-primary" target="_blank">Попробовать</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ОРИГИНАЛ для сравнения -->
+		<div class="col-md-4">
+			<div class="compare-label">Оригинал</div>
+			<div class="card minecraft-popular mb-4 text-center">
+				<div class="ribbon minecraft-popular"><span>БЕСПЛАТНО</span></div>
+				<div class="card-body">
+					<div class="card-icon mb-4">
+						<svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg>
+					</div>
+					<h2 class="plan-title mb-1">Promo</h2>
+					<h4 class="plan-desc mb-4">Ryzen 9 9950x 5.7 ГГц</h4>
+					<ul class="list-unstyled mb-4">
+						<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> 2 vCore</li>
+						<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> 2.5 GB RAM</li>
+						<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> 10 GB NVMe SSD</li>
+					</ul>
+					<h2 class="price mb-4">0₽ <span>/ 48ч.</span></h2>
+					<a href="https://t.me/bytelandnews" class="btn btn-primary" target="_blank">Попробовать</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/custom.js"></script>
+<script>
+	function switchLoc(btn) {
+		document.querySelectorAll('.loc-btn').forEach(function(b) { b.classList.remove('active'); });
+		btn.classList.add('active');
+	}
+</script>
+</body>
+</html>

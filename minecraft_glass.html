@@ -1,0 +1,611 @@
+<!-- Server Type
+	<div class="servertype pt-1 pb-5">
+		<div class="container-fluid container-custom">
+			<div class="title text-center mb-5">
+				<h4>Server Types</h4>
+				<p>Choose your Minecraft Plugin for server</p>
+			</div>
+			<div class="owl-carousel" id="servertypes">
+				<div class="item text-center">
+					<img src="assets/images/servertypes/bukkit.png" alt="Bukkit" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Bukkit">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/bungeecord.png" alt="Bungeecord" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Bungeecord">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/fabric.png" alt="Fabric" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Fabric">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/forge.png" alt="Forge" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Forge">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/ftb.png" alt="FTB" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="FTB">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/papermc.png" alt="PaperMC" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="PaperMC">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/purpur.svg" alt="Purpur" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Purpur">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/spigot.png" alt="Spigot" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Spigot">
+				</div>
+				<div class="item text-center">
+					<img src="assets/images/servertypes/sponge.png" alt="Sponge" class="img-fluid" data-bs-toggle="tooltip" data-bs-title="Sponge">
+				</div>
+			</div>
+		</div>
+	</div>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Minecraft хостинг | byteland</title>
+	<link rel="icon" type="image/png" href="assets/images/logo.png">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<style>.header{background:url("assets/images/header/minecraft.png") no-repeat center center;}
+/* ── Glass layer on top of byteland theme ── */
+body::before {
+  content:''; position:fixed; top:-40%; left:50%; transform:translateX(-50%);
+  width:900px; height:600px;
+  background:radial-gradient(ellipse, rgba(1,149,244,0.07) 0%, transparent 70%);
+  pointer-events:none; z-index:0;
+}
+.gc-card {
+  position:relative;
+  background:rgba(28,31,55,0.55);
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:16px; padding:22px; margin-bottom:1.5rem;
+  overflow:hidden; transition:border-color .2s,background .2s,transform .2s;
+}
+.gc-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);
+}
+.gc-card::after {
+  content:''; position:absolute; left:0; top:0;
+  background:url('assets/images/waves.svg') no-repeat;
+  transform:rotate(180deg) translateY(86%);
+  width:100%; height:100%; z-index:-1; opacity:.6;
+}
+.gc-card:hover { border-color:rgba(1,149,244,0.22); background:rgba(28,31,55,0.72); transform:translateY(-3px); }
+.gc-card-popular { border-color:rgba(1,149,244,0.3); background:rgba(1,149,244,0.05); }
+.gc-card-popular::before { background:linear-gradient(90deg,transparent,rgba(1,149,244,0.35),transparent); }
+.gc-card-free { border-color:rgba(32,191,108,0.25); background:rgba(32,191,108,0.04); }
+.gc-card-free::before { background:linear-gradient(90deg,transparent,rgba(32,191,108,0.3),transparent); }
+.gc-ribbon { width:150px; height:150px; overflow:hidden; position:absolute; top:-10px; right:-10px; z-index:3; }
+.gc-ribbon span { position:absolute; display:block; width:200px; padding:10px 0; background-color:var(--blue); color:var(--white); text-align:center; font-weight:700; font-size:10px; text-transform:uppercase; letter-spacing:.05em; transform:rotate(45deg); top:24px; right:-60px; }
+.gc-ribbon-green span { background-color:var(--green); color:#071a0c; }
+.gc-head { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+.gc-icon { width:68px; height:68px; flex-shrink:0; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; display:flex; align-items:center; justify-content:center; }
+.gc-icon svg { width:44px; height:44px; }
+.gc-meta { flex:1; min-width:0; }
+.gc-name { font-size:24px; font-weight:700; text-transform:uppercase; color:var(--white); line-height:1; margin-bottom:3px; letter-spacing:-.02em; }
+.gc-cpu { font-size:13px; color:var(--blue); margin-bottom:8px; }
+.gc-price { font-size:28px; font-weight:700; color:var(--white); line-height:1; letter-spacing:-.03em; }
+.gc-price span { font-size:13px; font-weight:400; color:var(--gray); font-style:italic; }
+.gc-specs { display:flex; background:rgba(20,22,39,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:10px; overflow:hidden; margin-bottom:14px; }
+.gc-spec { flex:1; padding:11px 0; text-align:center; border-right:1px solid rgba(255,255,255,0.05); }
+.gc-spec:last-child { border-right:none; }
+.gc-sv { font-size:20px; font-weight:700; color:var(--white); line-height:1; letter-spacing:-.02em; }
+.gc-sk { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--gray); margin-top:4px; }
+.gc-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+.gc-tag { display:inline-flex; align-items:center; gap:5px; padding:5px 10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:980px; font-size:12px; color:var(--light); font-family:"Golos Text",sans-serif; }
+.gc-tag svg { color:var(--gray); flex-shrink:0; }
+.gc-btn { display:block; width:100%; padding:10px; text-align:center; background:var(--blue); border:1px solid var(--blue); color:var(--white); font-weight:600; font-size:15px; border-radius:10px; text-decoration:none; transition:opacity .15s; font-family:"Golos Text",sans-serif; }
+.gc-card-free .gc-btn { background:var(--green); border-color:var(--green); color:#071a0c; }
+.gc-btn:hover { opacity:.82; color:var(--white); }
+.gc-card-free .gc-btn:hover { color:#071a0c; }
+/* Location tabs */
+.loc-row { display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; margin-bottom:2.5rem; }
+.loc-btn { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; background:rgba(28,31,55,0.6); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.08); border-radius:10px; cursor:pointer; font-family:"Golos Text",sans-serif; transition:all .2s; white-space:nowrap; }
+.loc-btn:hover { background:rgba(37,42,67,0.8); border-color:rgba(255,255,255,0.14); }
+.loc-btn.active { background:rgba(1,149,244,0.12); border-color:rgba(1,149,244,0.35); }
+.loc-flag { width:26px; height:26px; border-radius:50%; background:rgba(20,22,39,0.7); display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden; }
+.loc-flag img { width:18px; height:18px; object-fit:contain; }
+.loc-btn.active .loc-flag { background:rgba(1,149,244,0.2); }
+.loc-label { display:flex; align-items:baseline; gap:5px; }
+.loc-name { font-size:13px; font-weight:600; color:var(--white); }
+.loc-city { font-size:12px; color:var(--gray); font-weight:400; }
+.loc-btn.active .loc-city { color:rgba(1,149,244,0.7); }
+
+/* ── Header upgrades ── */
+.header-eyebrow {
+  display:inline-block; font-size:12px; font-weight:500; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--green); margin-bottom:14px;
+  background:rgba(32,191,108,0.1); border:1px solid rgba(32,191,108,0.2);
+  padding:4px 12px; border-radius:980px;
+}
+.header h1 { font-size:clamp(36px,5vw,64px); font-weight:700; line-height:1.05; letter-spacing:-.02em; color:var(--white); margin-bottom:12px; }
+.header-accent { color:var(--blue); }
+.header-sub { font-size:16px; color:var(--light); margin-bottom:28px; line-height:1.6; }
+.header-stats {
+  display:flex; gap:0; margin-bottom:28px;
+  background:rgba(28,31,55,0.6); backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.08); border-radius:12px;
+  overflow:hidden; display:inline-flex;
+}
+.hstat { padding:12px 20px; text-align:center; border-right:1px solid rgba(255,255,255,0.07); }
+.hstat:last-child { border-right:none; }
+.hstat-val { display:block; font-size:18px; font-weight:700; color:var(--white); line-height:1; }
+.hstat-key { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--gray); margin-top:3px; }
+.header-btn {
+  display:inline-block; padding:12px 28px; border-radius:10px;
+  background:var(--blue); color:var(--white); font-weight:600; font-size:15px;
+  text-decoration:none; transition:opacity .2s;
+}
+.header-btn:hover { opacity:.85; color:var(--white); }
+
+/* ── Glass panel section ── */
+.panel { position:relative; }
+.panel .panel_content h2 { color:var(--white); font-size:28px; font-weight:700; letter-spacing:-.02em; margin-bottom:14px; }
+.panel .panel_content p { color:var(--light); line-height:1.7; }
+.panel .panel_content ul li {
+  display:flex; align-items:center; gap:10px; padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05); color:var(--light);
+}
+.panel .panel_content ul li:last-child { border-bottom:none; }
+
+/* ── Glass DDoS section ── */
+.ddos_content h2 { color:var(--white); font-size:28px; font-weight:700; letter-spacing:-.02em; margin-bottom:14px; }
+.ddos_content p { color:var(--light); line-height:1.7; margin-bottom:12px; }
+
+/* ── Glass discord label ── */
+.discord-label {
+  background:rgba(1,149,244,0.06);
+  border-top:1px solid rgba(1,149,244,0.15);
+  border-bottom:1px solid rgba(1,149,244,0.15);
+  backdrop-filter:blur(12px);
+}
+.discord-label p { color:var(--light); }
+.discord-label .btn {
+  background:rgba(1,149,244,0.15); border:1px solid rgba(1,149,244,0.3);
+  color:var(--white); font-weight:500;
+  backdrop-filter:blur(10px); transition:all .2s;
+}
+.discord-label .btn:hover { background:var(--blue); border-color:var(--blue); }
+
+/* ── Plans section header ── */
+.plans { position:relative; }
+.plans::before {
+  content:''; position:absolute; top:-80px; left:50%; transform:translateX(-50%);
+  width:600px; height:300px;
+  background:radial-gradient(ellipse, rgba(1,149,244,0.05) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+/* ── Plans anchor ── */
+#plans { scroll-margin-top:80px; }
+
+	</style>
+</head>
+<body>
+	
+	<!-- Navbar -->
+	<!-- Navigation -->
+<nav id="navbar_top" class="navbar navbar-dark navbar-expand-lg fixed-top">
+		<div class="container">
+		<a class="navbar-brand" href="index.html">
+			<img class="img-fluid" src="assets/images/logo.svg" alt="byteland Logo">
+			byte<span>land</span>
+		</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dinoNavbar" aria-controls="dinoNavbar" aria-expanded="false" aria-label="Toggle navigation">
+	      	<span class="navbar-toggler-icon"></span>
+	    </button>
+		<div class="collapse navbar-collapse" id="dinoNavbar">
+		    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          	<a class="nav-link" href="index.html">Главная</a>
+		        </li>
+		        <li class="nav-item dropdown">
+		          	<a class="nav-link dropdown-toggle" href="rust.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            	Minecraft хостинг
+		          	</a>
+		          	<ul class="dropdown-menu dropdown-menu-end">
+		            	<li><a class="dropdown-item" href="minecraft.html">Java Edition</a></li>
+		            	<li><a class="dropdown-item" href="minecraft-be.html">Bedrock Edition</a></li>
+		          	</ul>
+		        </li>
+		        <li class="nav-item dropdown">
+		          	<a class="nav-link dropdown-toggle" href="minecraft.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            	Игровой хостинг
+		          	</a>
+		          	<ul class="dropdown-menu dropdown-large dropdown-menu-end">
+		          		<div class="row">
+							<div class="col-md-6">
+								<ul class="list-unstyled">
+									<li>
+										<a class="dropdown-item" href="hytale.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/hytale.png" class="rounded" alt="ARK Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Hytale</h4>
+													<p class="mb-0">Всего от <b>289₽</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="ark.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/ark.png" class="rounded" alt="ARK Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">ARK: Survival Evolved</h4>
+													<p class="mb-0">Всего от <b>599₽</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+					            	<li>
+										<a class="dropdown-item" href="csgo.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/csgo.png" class="rounded" alt="CS:GO Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Counter Strike</h4>
+													<p class="mb-0">Всего от <b>₽289</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="valheim.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/valheim.png" class="rounded" alt="Valheim Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Valheim</h4>
+													<p class="mb-0">Всего от <b>₽289</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="list-unstyled">
+									<li>
+										<a class="dropdown-item" href="terraria.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/terraria.png" class="rounded" alt="Terraria Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Terraria</h4>
+													<p class="mb-0">Всего от <b>59₽</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="fivem.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/fivem.png" class="rounded" alt="FiveM Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">FiveM</h4>
+													<p class="mb-0">Всего от <b>₽329</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="rust.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/rust.png" class="rounded" alt="RUST Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">RUST</h4>
+													<p class="mb-0">Всего от <b>₽599</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item" href="palworld.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/palworld.png" class="rounded" alt="Palworld Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Palworld</h4>
+													<p class="mb-0">Всего от <b>₽599</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+		          	</ul>
+		        </li>
+<li class="nav-item dropdown">
+		          	<a class="nav-link dropdown-toggle" href="discord-hosting.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            	Бот-хостинг
+		          	</a>
+		          	<ul class="dropdown-menu dropdown-large dropdown-menu-end">
+		          		<div class="row">
+							<div class="col-md-6">
+								<ul class="list-unstyled">
+									<li>
+										<a class="dropdown-item" href="telegram-hosting.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/telegram.png" class="rounded" alt="telegram Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Telegram</h4>
+													<p class="mb-0">Всего от <b>59₽</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="list-unstyled">
+									<li>
+										<a class="dropdown-item" href="discord-hosting.html">
+											<div class="d-flex align-items-center dropdown-item-mega">
+												<img src="assets/images/game_icons/discord.png" class="rounded" alt="Discord Icon">
+												<div class="dropdown-item-content ms-2">
+													<h4 class="mb-0">Discord</h4>
+													<p class="mb-0">Всего от <b>59₽</b></p>
+												</div> 
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+		          	</ul>
+		        </li>
+		        <li class="nav-item dropdown">
+		          	<a class="nav-link dropdown-toggle" href="minecraft.html#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            	По запросу
+		          	</a>
+		          	<ul class="dropdown-menu dropdown-menu-end">
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Among Us</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">CS 1.6</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">CS: Source</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">CS: GO</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">DayZ</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Doom</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Half-Life 2</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Garry's Mod</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">GTA: SA-MP</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">GTA: MTA</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Left 4 Dead 1/2</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Team Fortress 2</a></li>
+		            	<li><a class="dropdown-item" href="https://t.me/bytelandnews">Unturned</a></li>
+		          	</ul>
+		        </li>
+		        <li class="nav-item">
+					<div class="dropdown text-center">
+						<a class="btn dropdown-toggle" id="panel" data-bs-toggle="dropdown" aria-expanded="false">
+							Личный кабинет
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end dropdown-menu-panel" aria-labelledby="panel">
+							<a class="dropdown-item" href="https://t.me/bytelandnews">									
+								Личный кабинет <span class="d-block">(В разработке)</span>
+							</a>
+							<a class="dropdown-item" href="https://my.byteland.ru">									
+								Игровая панель <span class="d-block">Управление серверами</span>
+							</a>
+						</ul>
+					</div>
+				</li>
+		    </ul>
+		</div>
+	</div>
+</nav>
+	<!-- Header -->
+	<div class="header">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-start align-items-center h-100">
+                <div class="col-lg-8 mt-5">
+                    <div class="header-eyebrow">☁️ Игровой хостинг</div>
+                    <h1>Minecraft Java<br><span class="header-accent">хостинг</span></h1>
+                    <p class="header-sub">Надёжные серверы на Ryzen 9 · NVMe SSD · DDoS защита · Запуск за 2 минуты</p>
+                    <div class="header-stats">
+                        <div class="hstat"><span class="hstat-val">99.9%</span><span class="hstat-key">Uptime</span></div>
+                        <div class="hstat"><span class="hstat-val">&lt;5мс</span><span class="hstat-key">Пинг РФ</span></div>
+                        <div class="hstat"><span class="hstat-val">NVMe</span><span class="hstat-key">Хранилище</span></div>
+                        <div class="hstat"><span class="hstat-val">24/7</span><span class="hstat-key">Поддержка</span></div>
+                    </div>
+                    <a href="#plans" class="header-btn">Выбрать тариф →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Plans -->
+	<div class="plans py-5" id="plans">
+		<div class="container">
+			<div class="row d-flex justify-content-end mb-5">
+				<div class="col-12">
+					<div class="loc-row">
+						<button class="loc-btn active" onclick="switchLoc(this,'#nav-russia')">
+							<span class="loc-flag"><img src="assets/images/country/russia.svg" alt="RU"></span>
+							<span class="loc-label"><span class="loc-name">Россия</span><span class="loc-city">Москва</span></span>
+						</button>
+						<button class="loc-btn" onclick="switchLoc(this,'#nav-germany')">
+							<span class="loc-flag"><img src="assets/images/country/germany.svg" alt="DE"></span>
+							<span class="loc-label"><span class="loc-name">Германия</span><span class="loc-city">Франкфурт</span></span>
+						</button>
+						<button class="loc-btn" onclick="switchLoc(this,'#nav-poland')">
+							<span class="loc-flag"><img src="assets/images/country/poland.svg" alt="PL"></span>
+							<span class="loc-label"><span class="loc-name">Польша</span><span class="loc-city">Варшава</span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="nav-russia" role="tabpanel" aria-labelledby="showRussia">
+					<div class="container">
+<div class="row"><div class="col-lg-4 col-md-4"><div class="gc-card gc-card-free"><div class="gc-ribbon gc-ribbon-green"><span>БЕСПЛАТНО</span></div><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Promo</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">0₽<span> / 48ч.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">2</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">2.5GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">10GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Попробовать бесплатно</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Proxy</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">99₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">1</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">1GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">5GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Lite</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">199₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">2</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">2GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">12GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Micro</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">299₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">3</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">3GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">15GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Start</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">399₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">4</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">4GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">20GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card gc-card-popular"><div class="gc-ribbon "><span>Популярный</span></div><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Pro</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">579₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">6</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">6GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">25GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Ultra</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">699₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">7</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">8GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">30GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Advanced</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">899₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">7.5</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">10GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">35GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Turbo</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1049₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">8</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">12GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">40GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">MAX</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1299₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">9</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">16GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">45GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">MEGA</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1599₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">10</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">20GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">70GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">SUPER</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1949₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">14</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">26GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">100GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">ByteMax</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">2299₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">17</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">32GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">150GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="nav-germany" role="tabpanel" aria-labelledby="showGermany">
+					<div class="container">
+<div class="row"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Proxy</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">49₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">2</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">1GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">5GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Lite</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">179₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">2</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">2GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">12GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Micro</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">259₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">3</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">3GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">15GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Start</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">319₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">4</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">4GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">20GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card gc-card-popular"><div class="gc-ribbon "><span>Популярный</span></div><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Pro</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">429₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">6</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">6GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">25GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Ultra</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">529₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">7</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">8GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">30GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Advanced</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">679₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">7.5</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">10GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">35GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Turbo</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">789₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">8</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">12GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">40GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">MAX</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">979₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">9</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">16GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">45GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">MEGA</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">1199₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">10</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">20GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">70GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">SUPER</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">1499₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">14</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">26GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">100GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">ByteMax</div><div class="gc-cpu">Ryzen 9 5950x &middot; 4.9 ГГц</div><div class="gc-price">1899₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">17</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">32GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">150GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="nav-poland" role="tabpanel" aria-labelledby="showPoland">
+					<div class="container">
+<div class="row"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Proxy</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">49₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">2</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">1GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">5GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Lite</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">179₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">2</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">2GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">12GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Micro</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">259₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">3</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">3GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">15GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Start</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">319₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">4</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">4GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">20GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card gc-card-popular"><div class="gc-ribbon "><span>Популярный</span></div><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Pro</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">429₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">6</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">6GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">25GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Ultra</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">529₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">7</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">8GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">30GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Advanced</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">679₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">7.5</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">10GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">35GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">Turbo</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">789₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">8</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">12GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">40GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">MAX</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">979₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">9</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">16GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">45GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+<div class="row mt-5"><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">MEGA</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1199₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">10</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">20GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">70GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">SUPER</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1499₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">14</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">26GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">100GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div><div class="col-lg-4 col-md-4"><div class="gc-card "><div class="gc-head"><div class="gc-icon"><svg fill="none" stroke-linecap="square" aria-label="Minecraft" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="a" transform="matrix(19 11 0 22 76 142)"><path d="M.5.5h9v9h-9" fill="#432"/><path d="M2 8v1h2V8h5V7 H7V5" stroke="#864"/><path d="M1 5zM2 9zM1 8V7h2V6h1M5 9h2V8H6V4M7 6h1v1M9 9zM9 4v1" stroke="#643"/><path d="m1 7h1m2 0h1" stroke="#a75"/><path d="m5 5" stroke="#555"/><path d="M4 4V1h4v2H7V2H4v1H2v1" stroke="#593"/><path d="m2 1h1m3 0m1 1m2-1v1" stroke="#6a4"/><path d="m5 3m-2-1h1" stroke="#7c5"/><path d="m1 1v1h1" stroke="#9c6"/></g><use transform="matrix(-1 0 0 1 513 0)" xlink:href="#a"/><g transform="matrix(-19 11-19-11 447 159)"><path d="M.5.5h9v9h-9" fill="#7b4"/><path d="M1 1zM3 1zM4 7zM3 4v2H1v2h3v1h2V7M2 3h4V1H5v1h3M7 4v1H4M9 4v2H8v3" stroke="#8c5"/><path d="m1 3v2m0 2m0 2m2-6m1 1m1-3m0 2m0 2v1m0 2v1m2-7v1m1 4h1" stroke="#ad7"/></g></svg></div><div class="gc-meta"><div class="gc-name">ByteMax</div><div class="gc-cpu">Ryzen 9 9950x &middot; 5.7 ГГц</div><div class="gc-price">1899₽<span> / мес.</span></div></div></div><div class="gc-specs"><div class="gc-spec"><div class="gc-sv">17</div><div class="gc-sk">vCore</div></div><div class="gc-spec"><div class="gc-sv">32GB</div><div class="gc-sk">RAM</div></div><div class="gc-spec"><div class="gc-sv">150GB</div><div class="gc-sk">NVMe</div></div></div><div class="gc-tags"><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>20 баз данных</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>5 бэкапов</span><span class="gc-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>DDoS защита</span></div><a href="https://t.me/bytelandnews" class="gc-btn" target="_blank">Заказать</a></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Panel -->
+	<div class="panel py-6">
+		<div class="container">
+			<div class="row d-flex justify-content-between">
+				<div class="col-md-5">
+					<div class="laptop px-4">
+						<div class="laptop__screen">
+							<div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img class="img-fluid rounded-3" src="assets/images/panel_game/picture.jpg" width="620" height="400" alt="Dashboard">
+									</div>
+									<div class="carousel-item">
+										<img class="img-fluid rounded-3" src="assets/images/panel_game/picture.jpg" width="620" height="400" alt="Plugins">
+									</div>
+									<div class="carousel-item ">
+										<img class="img-fluid rounded-3" src="assets/images/panel_game/picture.jpg" width="620" height="400" alt="Mods">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="laptop__bottom">
+							<div class="laptop__under"></div>
+						</div>
+						<div class="laptop__shadow"></div>
+					</div>
+				</div>
+				<div class="col-md-7 d-flex align-items-center">
+					<div class="panel_content">
+						<h2>Удобная панель управления</h2>
+						<p>Современная панель управления серверами с интуитивным интерфейсом. Управляйте своими игровыми мирами, следите за производительностью, устанавливайте моды и перезапускайте серверы — всё в пару кликов.</p>
+						<ul>
+							<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g id="Check-4" data-name="4-Check"><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> Интуитивно понятная</li>
+							<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g id="Check-4" data-name="4-Check"><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> Много полезных инструментов </li>
+							<li><svg class="check" height="20" viewBox="0 0 520 520" width="20" xmlns="http://www.w3.org/2000/svg" fill="var(--velo-green)"><g id="Check-4" data-name="4-Check"><path d="m79.423 240.755a47.529 47.529 0 0 0 -36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515l250.787-403.892c.041-.067.084-.134.128-.2 2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0 -19.362 1.343q-.135.166-.278.327l-252.922 285.764a10.961 10.961 0 0 1 -15.585.843l-83.94-76.386a47.319 47.319 0 0 0 -31.939-12.438z"></path></g></svg> Предустановленные плагины и автоматическая настройка</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Panel -->
+
+	<!-- DDoS -->
+	<div class="ddos py-6">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<div class="col-lg-6 d-flex justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="400" height="400" viewBox="0 0 496.8 498" id="svg-animation"><path class="circle" d="M490.9 248.5c0 133.9-108.6 242.5-242.5 242.5S5.9 382.4 5.9 248.5C5.9 114.5 114.5 6 248.4 6s242.5 108.5 242.5 242.5z"/><path class="circle" d="M433.7 248.5c0 102.4-83 185.3-185.3 185.3-102.4 0-185.3-83-185.3-185.3 0-102.4 83-185.3 185.3-185.3 102.4-.1 185.3 82.9 185.3 185.3z"/><path class="circle" d="M372.4 248.5c0 68.5-55.5 124-124 124s-124-55.5-124-124 55.5-124 124-124 124 55.5 124 124z"/><path class="circle" d="M315.3 248.5c0 36.9-29.9 66.9-66.9 66.9-36.9 0-66.9-29.9-66.9-66.9 0-36.9 29.9-66.9 66.9-66.9 36.9 0 66.9 29.9 66.9 66.9z"/><path class="circle" d="M477.2 248.5c0 126.4-102.4 228.8-228.8 228.8C122 477.2 19.6 374.8 19.6 248.5 19.6 122.1 122 19.7 248.4 19.7s228.8 102.4 228.8 228.8z"/><path class="line" d="M248.4 19.7v457.5m-228.8-229h457.6M76.5 419.9 410 86.5m-323.3.1 323.5 323.6"/><circle class="dot" id="dot1" cx="437.8" cy="256.6" r="4.1"/><circle class="dot" id="dot2" cx="293.7" cy="132" r="4.1"/><circle class="dot" id="dot3" cx="225.2" cy="309.4" r="4.1"/><circle class="dot" id="dot4" cx="298.4" cy="363.6" r="4.1"/><circle class="dot" id="dot5" cx="73.5" cy="201.9" r="4.1"/><g class="triangle"><path d="M248.4 6C316 6 372 32.9 419.5 77L248.4 248.4V6z"/><animateTransform attributeName="transform" type="rotate" from="0 248 249" to="360 248 249" dur="6s" repeatCount="indefinite" id="triangle-animation"/></g><circle class="dot" cx="248.4" cy="248.2" r="10.5"/><circle class="dot" cx="248.4" cy="248.2" r="3.9"/></svg>				</div>
+				<div class="col-lg-6">
+					<div class="ddos_content">
+						<h2>DDoS Защита</h2>
+						<p>Наши игровые сервера защищены круглосуточной системой фильтрации трафика мощностью до 1 Тбит/с. Это позволяет обеспечить стабильную работу даже во время мощных DDoS-атак.</p>
+						<p>Хостинг идеально подходит для Minecraft, RUST, ARK, CS:GO, FiveM и других онлайн-игр, где стабильность и пинг имеют решающее значение. Вы можете сосредоточиться на игре, а мы — на защите вашего сервера.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End DDoS -->
+
+	<!-- Footer -->
+	<div class="discord-label py-3">
+	<div class="container">
+		<div class="row d-flex justify-content-between align-items-center">
+			<div class="col-lg-8">
+				<p class="mb-0">Загляните в наш Telegram для получения эксклюзивных новостей, обновлений и подарков!</p>
+			</div>
+			<div class="col-lg-2">
+				<a href="https://t.me/bytelandnews" class="btn bg-light" target="_blank" rel="noopener noreferrer"><svg class="telegram-icon" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="M476.6 73.3L35.4 244.7c-14.7 5.8-14.6 26.6.2 32.2l113.1 43.6 43.4 134.1c4.9 15.1 24.6 17.8 33.2 4.7l64.5-98.7 126.6 92.7c10.9 8 26.4 1.9 28.8-11.4L509.5 95c2.8-15.4-18.2-27.8-32.9-21.7zM203.2 318.6l199.6-185.2L236.6 344.8l-7.3 74.3-25.9-80.5z"/></svg> &nbsp;&nbsp;Присоединиться</a>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="pt-6 pb-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<h3>
+					<img class="img-fluid" src="assets/images/logo.svg" alt="DinoNode Footer Logo">
+					byte<span class="blue">land</span>
+				</h3>
+				<p>Надёжный хостинг игровых серверов.</p>
+				<p class="copy">ИП Саленко Георгий Владимирович<br><span style="font-size: 0.85em;">ИНН 471513403034 | ОГРНИП 325470400054521</span></p>
+			</div>
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="col-lg-3">
+						<h4>Сервисы</h4>
+						<ul>
+							<li><a href="ark.html">ARK: Survival Evolved</a></li>
+							<li><a href="csgo.html">Counter Strike GO</a></li>
+							<li><a href="fivem.html">FiveM</a></li>
+							<li><a href="minecraft.html">Minecraft</a></li>
+							<li><a href="valheim.html">Valheim</a></li>
+							<li><a href="rust.html">RUST</a></li>
+							<li><a href="terraria.html">Terraria</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3">
+						<h4>Поддержка</h4>
+						<ul>
+							<li><a href="about-us.html">База знаний</a></li>
+							<li><a href="about-us.html">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+									<path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
+								</svg>
+								Статус серверов
+							</a></li>
+							<li><a href="https://my.byteland.ru">Панель управления</a></li>
+							<li><a href="about-us.html">Дискорд сервер</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3">
+						<h4>Контакты</h4>
+						<ul>
+							<li><a href="about-us.html">О нас</a></li>
+							<li><a href="about-us.html">Связь с нами</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3">
+						<h4>Условия</h4>
+						<ul>
+							<li><a href="terms-of-service.html">Пользовательское соглашение</a></li>
+							<li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</footer>
+<script>
+function switchLoc(btn,t){document.querySelectorAll(".loc-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");document.querySelectorAll(".tab-pane").forEach(p=>p.classList.remove("show","active"));var p=document.querySelector(t);if(p)p.classList.add("show","active");}
+</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/custom.js"></script>	<script src="assets/js/blinker.js"></script>
+	<script src="assets/js/minecraft.js"></script>
+</body>
+</html>
